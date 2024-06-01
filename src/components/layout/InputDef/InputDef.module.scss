@@ -1,0 +1,49 @@
+@import "../../../styles/mixins";
+
+.InputDefBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &_textArea {
+    grid-column: 1/ span 2;
+
+    @include smScreenMedia {
+      grid-column: 1;
+    }
+  }
+
+  &__label {
+    color: #FFFFFFCC;
+    @include setFont(20px, 300);
+    position: absolute;
+    left: 2px;
+    transition: $transition;
+    z-index: -1;
+
+    @include xxlScreenMedia {
+      font-size: 18px;
+    }
+
+    @include xlScreenMedia {
+      font-size: 16px
+    }
+
+    @include smScreenMedia {
+      font-size: 14px;
+    }
+
+    &_active {
+      transform: translateY(calc(-100% - 5px));
+      font-size: 14px;
+
+      @include mdScreenMedia {
+        transform: translateY(calc(-100% - 2px));
+        font-size: 12px;
+      }
+    }
+  }
+
+
+}
+

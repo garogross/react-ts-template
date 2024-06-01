@@ -1,0 +1,65 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixins";
+
+.radioList {
+
+  @include flexCol(flex-start,flex-end);
+  gap: 30px;
+
+  @include smScreenMedia {
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+
+  &__Input {
+    -webkit-appearance: none;
+    visibility: hidden;
+    width: 0;
+
+    &:checked + label {
+      &::before {
+        background: $color-white;
+      }
+    }
+  }
+
+  &__label {
+    -webkit-appearance: none;
+    @include setFont(20px, 500);
+    color: $color-white;
+    padding-left: 28px;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+
+    @include lgScreenMedia {
+      padding-left: 24px;
+    }
+
+    &::before {
+      content: '';
+      -webkit-appearance: none;
+      -webkit-border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid $color-white;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $color-black;
+      transition: $transition;
+      box-shadow: inset 0px 0px 0px 4px $color-black;
+      border-collapse: collapse;
+      overflow: hidden;
+
+      @include lgScreenMedia {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixins";
+
+
+.errorText {
+  @include setFont(12px, 300);
+  position: absolute;
+  left: 1px;
+  z-index: -1;
+  bottom: 0px;
+  transition: $transition;
+  color: $color-dark-red;
+
+  @include lgScreenMedia {
+    font-size: 10px;
+  }
+
+  &_visible {
+    bottom: -16px;
+    z-index: 1;
+  }
+}

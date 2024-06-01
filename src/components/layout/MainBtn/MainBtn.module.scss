@@ -1,0 +1,49 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixins";
+
+.mainBtn {
+  cursor: pointer;
+  border: none;
+  background: $color-light-blue;
+  color: $color-white;
+  min-width: 148px;
+  white-space: nowrap;
+  text-align: center;
+  padding: 18px 10px;
+  border-radius: 4px;
+  transition: $transition;
+  @include setFont(20px,500);
+
+  @include  xxlScreenMedia {
+    min-width: 136px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 15px;
+  }
+
+  @include  xlScreenMedia {
+    min-width: 124px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  @include lgScreenMedia {
+    font-size: 14px;
+    min-width: 92px;
+    padding-top: 7px;
+    padding-bottom: 9px;
+  }
+
+  @include smScreenMedia {
+    min-width: 189px;
+  }
+
+  &:hover,
+  &:active {
+    box-shadow: 0 0 0 2px $color-white;
+  }
+
+  &:disabled {
+    background: #04C0E2;
+  }
+}

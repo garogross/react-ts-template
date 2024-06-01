@@ -1,0 +1,32 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixins";
+
+.aboutHeader {
+   position: relative;
+   margin-top: 108px;
+
+   @include xxlScreenMedia {
+      margin-top: 95px;
+   }
+
+   @include xlScreenMedia {
+      margin-top: 89px;
+   }
+
+   @include lgScreenMedia {
+      margin-top: 79px;
+   }
+
+   @include smScreenMedia {
+      margin-top: 69px;
+   }
+
+   &__title {
+     text-align: center;
+   }
+
+   &__imgLogoWall {
+      width: 100%;
+      @include setDistance(margin-bottom, 140);
+   }
+}

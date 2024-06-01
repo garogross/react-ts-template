@@ -1,0 +1,170 @@
+@import "vars";
+@import "mixins";
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:not(i) {
+  font-family: $font-fam-def;
+
+}
+
+body {
+  background: $color-black;
+}
+
+.container {
+  max-width: 1728px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 14px;
+  padding-left: 14px;
+
+  @include xxlScreenMedia {
+    max-width: 1339px;
+  }
+
+  @include xlScreenMedia {
+    max-width: 1148px;
+  }
+
+  @include lgScreenMedia {
+    max-width: 944px
+  }
+}
+
+.contentTextDef {
+  @include setFont(20px, 300);
+  color: $color-white;
+  line-height: 25px;
+
+  @include xxlScreenMedia {
+    font-size: 18px;
+  }
+
+  @include xlScreenMedia {
+    line-height: 22px;
+    font-size: 16px
+  }
+
+  @include smScreenMedia {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.titleDef {
+  @include setFont(42px, 500);
+  color: $color-white;
+
+  @include xxlScreenMedia {
+    font-size: 36px;
+  }
+
+  @include xlScreenMedia {
+    font-size: 30px;
+  }
+
+  @include lgScreenMedia {
+    font-size: 25px;
+  }
+
+  @include smScreenMedia {
+    font-size: 22px;
+  }
+}
+
+.sliderDotesDef {
+  display: block;
+
+  .slick-dots {
+    bottom: -30px;
+
+    @include smScreenMedia {
+      bottom: -25px;
+    }
+  }
+
+  .slick-dots li {
+    width: auto;
+    height: auto;
+    margin: 0 6px;
+  }
+
+  .slick-dots .slick-active div {
+    background: $color-light-blue;
+  }
+}
+
+.scrollbarDef {
+  cursor: auto;
+
+  &::-webkit-scrollbar {
+    cursor: default;
+    background: $color-white;
+    border-radius: 6px;
+    margin-top: 16px;
+    margin-right: 9px;
+    background-clip: padding-box;
+    width: 10px;
+    border-bottom: 12px solid #FFFFFF;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    cursor: default !important;
+    width: 14px;
+    border-radius: 6px;
+    background-clip: padding-box;
+    background: $color-light-blue;
+    //background-image: url(../assets/images/global/scrollbaritem.png);
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.inputDef {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid $color-white;
+  padding: 0 2px 8px;
+  color: $color-white;
+  transition: $transition;
+
+  @include setFont(20px, 300);
+
+  @include xxlScreenMedia {
+    font-size: 18px;
+  }
+
+  @include xlScreenMedia {
+    font-size: 16px
+  }
+
+  @include smScreenMedia {
+    font-size: 14px;
+    border-width: 1px;
+  }
+
+  &:not(&_disabled) {
+    &:hover, &:focus, &:focus-within {
+      border-color: $color-light-blue;
+    }
+  }
+
+  &:-webkit-autofill {
+    -webkit-text-fill-color: $color-white;
+    box-shadow: 0 0 0px 1000px $color-black inset;
+  }
+
+  ::placeholder {
+    color: #FFFFFFCC;
+  }
+}
